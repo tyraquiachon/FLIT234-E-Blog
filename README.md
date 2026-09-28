@@ -5,8 +5,8 @@ Tyra Quiachon · Fall 2026
 
 A semester-long e-journal about South Korea, designed like a Seoul Metro line. Each entry is a station, and new stations open as the semester goes.
 
-**Live site:** https://YOUR-GITHUB-USERNAME.github.io/TyraQuiachon_FLIT234_SouthKorea/
-
+**Live site:** [https://YOUR-GITHUB-USERNAME.github.io/TyraQuiachon_FLIT234_SouthKorea/
+](https://tyraquiachon.github.io/FLIT234-E-Blog/)
 ## Entries
 
 | Station | Entry | Status |
