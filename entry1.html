@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entry 1: Target Country · Next Stop: Seoul</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stripe"></div>
+
+  <nav class="platform" aria-label="Station sign">
+    <div class="platform-inner">
+      <a class="prev" href="index.html">← 노선도 Route Map</a>
+      <div class="platform-current">
+        <span class="platform-num">01</span>
+        <div>
+          <strong>목적지</strong>
+          <span>Target Country</span>
+        </div>
+      </div>
+      <span class="next">여행 준비 Pre-Traveling →</span>
+    </div>
+  </nav>
+
+  <main class="entry">
+    <h1 class="entry-title hangul-flip" data-ko="안녕하세요, 대한민국!">Hello, South Korea!</h1>
+    <p class="entry-meta">Entry 1 · September 27, 2026 · Tyra Quiachon</p>
+
+    <figure class="photo">
+      <img src="images/entry1-seoul.jpg" alt="Seoul skyline">
+      <figcaption>Seoul, the capital and my first stop.</figcaption>
+    </figure>
+
+    <div class="chips">
+      <a href="#geography">Geography</a>
+      <a href="#people">People</a>
+      <a href="#culture">Culture</a>
+      <a href="#history">History</a>
+      <a href="#society">Society</a>
+      <a href="#why">Why Korea?</a>
+    </div>
+
+    <p>Welcome aboard! This journal follows my semester-long trip into South Korea, one station at a time. For the first stop, I want to introduce the country itself: where it is, who lives there, what shaped it, and why it's the country I picked.</p>
+
+    <section id="geography">
+      <h2 class="hangul-flip" data-ko="지리">Geography</h2>
+      <p>South Korea (officially the Republic of Korea, 대한민국) sits on the southern half of the Korean Peninsula in East Asia. To the north, it shares a heavily guarded border with North Korea, the Demilitarized Zone (DMZ). The rest of the country is surrounded by water: the Yellow Sea to the west, the East Sea (Sea of Japan) to the east, and the Korea Strait to the south, across from Japan.</p>
+      <div class="facts">
+        <div class="fact"><strong>~100,000 km²</strong><span>slightly smaller than Pennsylvania</span></div>
+        <div class="fact"><strong>~70%</strong><span>of the land is mountains</span></div>
+        <div class="fact"><strong>1,947 m</strong><span>Hallasan on Jeju, the highest peak</span></div>
+        <div class="fact"><strong>4 seasons</strong><span>with a rainy monsoon summer (장마)</span></div>
+      </div>
+      <p>Because so much of the land is mountainous, most people live in the flatter areas and along the coasts, which is part of why the cities are so dense. Click the pins below to explore a few important places.</p>
+      <div id="map" role="region" aria-label="Map of South Korea"></div>
+    </section>
+
+    <section id="people">
+      <h2 class="hangul-flip" data-ko="사람들">People</h2>
+      <p>About 51 million people live in South Korea, and roughly half of them live in the Seoul Capital Area. The population is one of the most ethnically uniform in the world, although the number of foreign residents and multicultural families has been growing.</p>
+      <p>Everyone speaks Korean, which is written in <strong>Hangul (한글)</strong>. King Sejong the Great created the alphabet in the 1400s so that ordinary people could learn to read, instead of relying only on Chinese characters. Koreans still celebrate Hangul Day every October 9th.</p>
+      <p>Religion is mixed: around half of Koreans say they have no religion, and most of the rest are Christian or Buddhist. Confucian values like respect for elders and loyalty to family still shape everyday life, even for people who aren't religious.</p>
+      <figure class="photo">
+        <img src="images/entry1-people.jpg" alt="Street scene in Korea">
+        <figcaption>Everyday life in Korea.</figcaption>
+      </figure>
+    </section>
+
+    <section id="culture">
+      <h2 class="hangul-flip" data-ko="문화">Culture</h2>
+      <p>Korean culture mixes centuries-old tradition with some of the most modern pop culture in the world.</p>
+      <p><strong>Food:</strong> Meals are built around rice, soup, and lots of shared side dishes (반찬, banchan). Kimchi is at almost every meal, and <em>kimjang</em>, the tradition of families making kimchi together for winter, is recognized by UNESCO as Intangible Cultural Heritage. Other favorites include bibimbap, tteokbokki, and Korean BBQ.</p>
+      <p><strong>Clothing:</strong> The traditional outfit is the <em>hanbok (한복)</em>, worn now mostly for holidays like Chuseok and Seollal, weddings, and first birthdays.</p>
+      <p><strong>Language and manners:</strong> Korean has different speech levels, so the way you talk changes depending on someone's age and status. Using the polite form with elders and strangers is expected.</p>
+      <p><strong>The Korean Wave (한류, Hallyu):</strong> Since the late 1990s, Korean music, dramas, films, beauty, and food have spread worldwide. This is the part of Korean culture that first reached me.</p>
+      <figure class="photo">
+        <img src="images/entry1-culture.jpg" alt="Korean food or hanbok">
+        <figcaption>Tradition and modern life side by side.</figcaption>
+      </figure>
+    </section>
+
+    <section id="history">
+      <h2 class="hangul-flip" data-ko="역사">History</h2>
+      <p>Korea has thousands of years of history, but a few stops on the timeline explain a lot about the country today:</p>
+      <ol class="timeline">
+        <li><strong>Three Kingdoms period</strong>Goguryeo, Baekje, and Silla competed for the peninsula until Silla unified most of it in the 600s.</li>
+        <li><strong>Goryeo (918–1392)</strong>The dynasty that gave "Korea" its English name.</li>
+        <li><strong>Joseon (1392–1910)</strong>A Confucian dynasty that ruled for over 500 years. Hangul was created during this period.</li>
+        <li><strong>Japanese rule (1910–1945)</strong>Korea was a colony of Japan until the end of World War II.</li>
+        <li><strong>Division (1945–1948)</strong>The peninsula was split at the 38th parallel, and separate governments formed in the North and South.</li>
+        <li><strong>Korean War (1950–1953)</strong>The war ended in an armistice, not a peace treaty, so the two Koreas are technically still at war.</li>
+        <li><strong>"Miracle on the Han River"</strong>Starting in the 1960s, South Korea grew from one of the poorest countries in the world into a major economy.</li>
+        <li><strong>Democracy (1987) and the Seoul Olympics (1988)</strong>Mass protests led to democratic elections, and the Olympics introduced a modern Korea to the world.</li>
+      </ol>
+      <figure class="photo">
+        <img src="images/entry1-history.jpg" alt="Gyeongbokgung Palace">
+        <figcaption>Historic Korea.</figcaption>
+      </figure>
+    </section>
+
+    <section id="society">
+      <h2 class="hangul-flip" data-ko="사회">Society</h2>
+      <p>Today South Korea is a democratic republic led by an elected president, and one of the most technologically advanced countries in the world. It's home to companies like Samsung, Hyundai, and LG, and it has some of the fastest internet anywhere.</p>
+      <p>Education is extremely competitive. Many students attend private after-school academies (학원, hagwon) to prepare for the <em>Suneung</em>, the national college entrance exam. On exam day, planes are rerouted and office hours are pushed back so students aren't disturbed.</p>
+      <p>The country also faces real challenges: it has one of the lowest birth rates in the world (under one child per woman), a fast-aging population, long work hours, and high pressure to succeed. These pressures show up a lot in Korean dramas and films, which is part of why they feel so honest to me.</p>
+    </section>
+
+    <section id="why">
+      <h2 class="hangul-flip" data-ko="왜 한국일까?">Why South Korea?</h2>
+      <div class="why">
+        <p>I actually heard Korean music before I even knew it was Korean. The Wonder Girls' "Nobody" was a huge hit in the Philippines, and my mom used to play it all the time. Years later, when "Gangnam Style" took over the internet, one of the next videos YouTube recommended to me was BTS. Since around 2016–2017 I've been a fan, and I've been into K-pop ever since.</p>
+        <p>K-pop led me to K-dramas. My first one was <em>W: Two Worlds</em>, but my favorites are slow romances like <em>Our Beloved Summer</em>. I also love Korean animated films like <em>Your Letter</em> and <em>Lost in Starlight</em>.</p>
+        <p>After years of watching and listening from far away, I want to understand the country behind the music and stories: the history, the everyday life, and the values that shape them. This semester is my chance to go beyond being a fan.</p>
+        <div class="playlist">
+          <div class="track-card"><span>First song</span><strong>Wonder Girls · "Nobody"</strong></div>
+          <div class="track-card"><span>The gateway</span><strong>BTS</strong></div>
+          <div class="track-card"><span>First K-drama</span><strong>W: Two Worlds</strong></div>
+          <div class="track-card"><span>Favorite K-drama</span><strong>Our Beloved Summer</strong></div>
+          <div class="track-card"><span>Animated films</span><strong>Your Letter · Lost in Starlight</strong></div>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src="images/entry1-why.jpg" alt="Something from K-pop or K-dramas that I love">
+        <figcaption>What brought me here.</figcaption>
+      </figure>
+    </section>
+
+    <section id="sources">
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>CIA. "Korea, South." <em>The World Factbook</em>. https://www.cia.gov/the-world-factbook/countries/korea-south/</li>
+        <li>Britannica. "South Korea." https://www.britannica.com/place/South-Korea</li>
+        <li>UNESCO. "Kimjang, making and sharing kimchi in the Republic of Korea." https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881</li>
+        <li>Korea.net. "About Korea." https://www.korea.net/AboutKorea</li>
+      </ul>
+      <a class="back-home" href="index.html">← Back to the route map</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tyra Quiachon · FLIT 234 · Fall 2026</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
