@@ -5,7 +5,7 @@ Tyra Quiachon · Fall 2026
 
 A semester-long e-journal about South Korea, designed like a Seoul Metro line. Each entry is a station, and new stations open as the semester goes.
 
-**Live site:** https://tyraquiachon.github.io/FLIT234-E-Blog/)
+**Live site:** https://YOUR-GITHUB-USERNAME.github.io/TyraQuiachon_FLIT234_SouthKorea/
 
 ## Entries
 
@@ -19,7 +19,7 @@ A semester-long e-journal about South Korea, designed like a Seoul Metro line. E
 ## Files
 
 - `index.html`: home screen with the train ticket and route map
-- `entry1.html`: Entry 1
+- `entry1.html` – `entry4.html`: the four entries
 - `style.css`: all styling
 - `script.js`: route map, Hangul hover headings, photo slots, and the Leaflet map
 - `images/`: photos for each entry

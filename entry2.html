@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entry 2: Pre-Traveling · Next Stop: Seoul</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stripe"></div>
+
+  <nav class="platform" aria-label="Station sign">
+    <div class="platform-inner">
+      <a class="prev" href="entry1.html">← 목적지 Target Country</a>
+      <div class="platform-current">
+        <span class="platform-num">02</span>
+        <div>
+          <strong>여행 준비</strong>
+          <span>Pre-Traveling</span>
+        </div>
+      </div>
+      <a class="next" data-next="3" href="entry3.html">문화 이해 Cross-Cultural →</a>
+    </div>
+  </nav>
+
+  <main class="entry">
+    <h1 class="entry-title hangul-flip" data-ko="여행 준비 완료!">Packing for Seoul</h1>
+    <p class="entry-meta">Entry 2 · Tyra Quiachon</p>
+
+    <figure class="photo">
+      <img src="images/entry2-cover.jpg" alt="Packing for the trip or Incheon Airport">
+      <figcaption>13 hours from LAX to Incheon. Playlist already downloaded.</figcaption>
+    </figure>
+
+    <div class="chips">
+      <a href="#know">Need to Know</a>
+      <a href="#phrases">Phrases</a>
+      <a href="#pack">Packing</a>
+      <a href="#trip">Itinerary</a>
+      <a href="#expect">Expect vs. Reality</a>
+      <a href="#reflect">Reflection</a>
+    </div>
+
+    <p>Now comes the fun part, actually planning the trip! I've been "virtually visiting" Korea through my screen for as long as I could remember, so this entry is me pretending like I'm finally booking the flight. What do I need to know? Where am I going? And what could go wrong?</p>
+
+    <section id="know">
+      <h2 class="hangul-flip" data-ko="알아야 할 것">Need to Know</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="emoji">🛂</span>
+          <h3>Entry rules</h3>
+          <p>Good news: as an American citizen I don't need a visa for trips up to 90 days, and I'm exempt from the K-ETA through December 31, 2026. I'd just fill out the online <strong>e-Arrival Card</strong>, which opens 3 days before I land.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">💳</span>
+          <h3>Money</h3>
+          <p>Korea uses the won (₩). My card should work pretty much everywhere, but I'd keep some cash on me for street food and markets. And <strong>no tipping</strong>, which is honestly a nice break from LA.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🚇</span>
+          <h3>Getting around</h3>
+          <p>A <strong>T-money card</strong> gets me on the subway and buses, and I can even pay at convenience stores with it. To get to Busan, I'd take the KTX bullet train. It's only about 2.5 hours!</p>
+        </div>
+        <div class="card">
+          <span class="emoji">📱</span>
+          <h3>Apps</h3>
+          <p>Fun fact I didn't know: Google Maps barely works for directions in Korea. So I'd download <strong>Naver Map</strong> or <strong>KakaoMap</strong>, plus <strong>Papago</strong> to translate and <strong>Kakao T</strong> to call taxis.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🔌</span>
+          <h3>Power</h3>
+          <p>Korea uses 220V with round two-pin plugs (Type C/F). As a CS student, my laptop and phone are my whole life, so an adapter is non-negotiable.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🙇</span>
+          <h3>Manners</h3>
+          <ul>
+            <li>Use two hands when giving or taking something</li>
+            <li>Shoes off in homes and some restaurants</li>
+            <li>No loud phone calls on the subway</li>
+            <li>Don't sit in the priority seats</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="phrases">
+      <h2 class="hangul-flip" data-ko="필수 표현">Survival Phrases</h2>
+      <p>Years of BTS and K-dramas taught me a lot of Korean... mostly "saranghae" and dramatic gasps. Here are the polite phrases I'd actually need to survive.</p>
+      <div class="phrases">
+        <div class="phrase"><button class="speak" data-say="안녕하세요" aria-label="Play">🔊</button><div><strong>안녕하세요</strong> <span>annyeonghaseyo · Hello</span></div></div>
+        <div class="phrase"><button class="speak" data-say="감사합니다" aria-label="Play">🔊</button><div><strong>감사합니다</strong> <span>gamsahamnida · Thank you</span></div></div>
+        <div class="phrase"><button class="speak" data-say="이거 주세요" aria-label="Play">🔊</button><div><strong>이거 주세요</strong> <span>igeo juseyo · This one, please</span></div></div>
+        <div class="phrase"><button class="speak" data-say="얼마예요?" aria-label="Play">🔊</button><div><strong>얼마예요?</strong> <span>eolmayeyo? · How much is it?</span></div></div>
+        <div class="phrase"><button class="speak" data-say="화장실 어디예요?" aria-label="Play">🔊</button><div><strong>화장실 어디예요?</strong> <span>hwajangsil eodiyeyo? · Where is the bathroom?</span></div></div>
+        <div class="phrase"><button class="speak" data-say="죄송합니다" aria-label="Play">🔊</button><div><strong>죄송합니다</strong> <span>joesonghamnida · I'm sorry</span></div></div>
+      </div>
+    </section>
+
+    <section id="pack">
+      <h2 class="hangul-flip" data-ko="짐 싸기">Packing List</h2>
+      <div class="checklist">
+        <strong class="count">0 / 0 packed</strong>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <ul>
+          <li><label><input type="checkbox"><span>Passport (obviously)</span></label></li>
+          <li><label><input type="checkbox"><span>e-Arrival Card done</span></label></li>
+          <li><label><input type="checkbox"><span>Plug adapter (Type C/F)</span></label></li>
+          <li><label><input type="checkbox"><span>eSIM so I'm never offline</span></label></li>
+          <li><label><input type="checkbox"><span>Naver Map + Papago downloaded</span></label></li>
+          <li><label><input type="checkbox"><span>A little cash for street food</span></label></li>
+          <li><label><input type="checkbox"><span>Comfy shoes for walking all day</span></label></li>
+          <li><label><input type="checkbox"><span>Cute socks (shoes come off a lot!)</span></label></li>
+          <li><label><input type="checkbox"><span>Light jacket for fall</span></label></li>
+          <li><label><input type="checkbox"><span>Empty suitcase space for albums</span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="trip">
+      <h2 class="hangul-flip" data-ko="여행 일정">My Itinerary</h2>
+      <p>I'd go in the fall (September to November), when it's cool out and the leaves are changing. I'm definitely skipping the summer monsoon, because I'm from LA and I don't do humidity. Click through the days to see my stops on the map!</p>
+      <div class="day-tabs" id="dayTabs"></div>
+      <p class="day-title" id="dayTitle"></p>
+      <div id="map" role="region" aria-label="Trip map"></div>
+      <ol class="day-stops" id="dayStops"></ol>
+      <figure class="photo">
+        <img src="images/entry2-trip.jpg" alt="A place I want to visit in Korea">
+        <figcaption>The stop I'm most hyped for.</figcaption>
+      </figure>
+    </section>
+
+    <section id="expect">
+      <h2 class="hangul-flip" data-ko="기대 vs 현실">Expectation vs. Reality</h2>
+      <p>Let's be real: most of what I "know" about Korea comes from BTS, K-dramas, and animated movies. I love them, but they're the highlight reel, not the full picture. Each card shows what I'm expecting vs what I'd actually find.</p>
+      <div class="flips">
+        <button class="flip"><div class="flip-inner">
+          <div class="flip-face flip-front"><span class="label">I expect</span><p>Seoul is going to look exactly like Our Beloved Summer: cozy cafés, rooftop views, pretty streets everywhere.</p><span class="tap">tap to flip</span></div>
+          <div class="flip-face flip-back"><span class="label">I might find</span><p>Dramas pick the prettiest spots. Real neighborhoods are a mix of old alleys, giant apartment buildings, traffic, and packed rush-hour trains.</p></div>
+        </div></button>
+        <button class="flip"><div class="flip-inner">
+          <div class="flip-face flip-front"><span class="label">I expect</span><p>Everyone in Korea loves K-pop as much as I do.</p><span class="tap">tap to flip</span></div>
+          <div class="flip-face flip-back"><span class="label">I might find</span><p>Lots of Koreans aren't idol fans at all! Ballads, indie, hip-hop, and trot are big too, and fandom culture like mine is kind of its own little world.</p></div>
+        </div></button>
+        <button class="flip"><div class="flip-inner">
+          <div class="flip-face flip-front"><span class="label">I expect</span><p>I'll get around easily with English and Google Maps.</p><span class="tap">tap to flip</span></div>
+          <div class="flip-face flip-back"><span class="label">I might find</span><p>Seoul's subway signs have English, but Google Maps is pretty useless there. Outside big cities, I'd be relying on Korean apps and my basic phrases.</p></div>
+        </div></button>
+        <button class="flip"><div class="flip-inner">
+          <div class="flip-face flip-front"><span class="label">I expect</span><p>Everything is going to be super spicy.</p><span class="tap">tap to flip</span></div>
+          <div class="flip-face flip-back"><span class="label">I might find</span><p>Tons of dishes are mild, like seolleongtang (beef bone soup), galbi, and gimbap. A lot of the spice comes from side dishes you add yourself.</p></div>
+        </div></button>
+        <button class="flip"><div class="flip-inner">
+          <div class="flip-face flip-front"><span class="label">I expect</span><p>People will be super formal and kind of distant with strangers.</p><span class="tap">tap to flip</span></div>
+          <div class="flip-face flip-back"><span class="label">I might find</span><p>How formal people are depends on age and relationship. Once people get to know you, there's <em>jeong</em> (정), a deep warmth and loyalty that builds over time.</p></div>
+        </div></button>
+        <button class="flip"><div class="flip-inner">
+          <div class="flip-face flip-front"><span class="label">I expect</span><p>I'll need to carry a ton of cash.</p><span class="tap">tap to flip</span></div>
+          <div class="flip-face flip-back"><span class="label">I might find</span><p>Cards and phone payments work almost everywhere, even for small stuff. Cash is mostly for street food stalls and traditional markets.</p></div>
+        </div></button>
+      </div>
+    </section>
+
+    <section id="reflect">
+      <h2 class="hangul-flip" data-ko="생각">Reflection</h2>
+      <p>Planning this trip made me realize how much of my idea of Korea comes from a screen. The Seoul in my head is from music videos, dramas, and concert stages, all perfectly lit and edited. But the real city is where people commute, cram for exams, and work long hours. That's the side of Korea I touched on in Entry 1, and it's way less glamorous than a BTS music video.</p>
+      <p>I think the biggest reality check would be that I'd be the outsider for once. When I'm watching a K-drama, subtitles explain everything to me. In real life, I'd be the one squinting at a menu or not knowing when to bow. Honestly, that's what makes me want to learn more before I go. It's also what leads into my next entry, where I compare Korean culture to my own life here in LA.</p>
+    </section>
+
+    <section id="sources">
+      <h2>Sources</h2>
+      <ul class="sources">
+        <li>U.S. Department of State. "South Korea Travel Advisory." https://travel.state.gov/en/international-travel/travel-advisories/south-korea.html</li>
+        <li>Korea.net. "e-Arrival raises speed, convenience of foreign entry into nation." https://www.korea.net/NewsFocus/FoodTravel/view?articleId=267089</li>
+        <li>Korea Tourism Organization. "Visit Korea." https://english.visitkorea.or.kr</li>
+      </ul>
+      <a class="back-home" href="index.html">← Back to the route map</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tyra Quiachon · FLIT 234 · Fall 2026</p>
+  </footer>
+
+  <script>
+    window.tripDays = [
+      { label: "Day 1", title: "Landing in Seoul!", stops: [
+        { name: "Incheon Airport", note: "land after the long flight from LAX and take the AREX train into the city", at: [37.4602, 126.4407] },
+        { name: "Myeongdong", note: "check in, grab a T-money card, and eat my way through the street food", at: [37.5636, 126.9827] }
+      ]},
+      { label: "Day 2", title: "Palace day in hanbok", stops: [
+        { name: "Gyeongbokgung Palace", note: "rent a hanbok (you get in free if you wear one!) and catch the guard ceremony", at: [37.5796, 126.977] },
+        { name: "Bukchon Hanok Village", note: "pretty traditional houses, but people actually live here, so keep it quiet", at: [37.5826, 126.983] },
+        { name: "Insadong", note: "tea houses and souvenir shopping", at: [37.5740, 126.9850] }
+      ]},
+      { label: "Day 3", title: "Hongdae + Han River", stops: [
+        { name: "Hongdae", note: "street performers and K-pop dance covers, aka my natural habitat", at: [37.5563, 126.922] },
+        { name: "Yeouido Hangang Park", note: "a convenience-store ramyeon picnic by the river, the most K-drama thing ever", at: [37.5284, 126.9327] },
+        { name: "N Seoul Tower", note: "the whole city lit up at night", at: [37.5512, 126.9882] }
+      ]},
+      { label: "Day 4", title: "The DMZ", stops: [
+        { name: "Imjingak", note: "a guided DMZ tour to see where Korea is divided, a serious but important stop", at: [37.8894, 126.74] }
+      ]},
+      { label: "Day 5", title: "Busan", stops: [
+        { name: "Busan Station", note: "2.5 hours on the KTX to Jungkook's hometown, so I had to!", at: [35.1151, 129.0422] },
+        { name: "Gamcheon Culture Village", note: "colorful hillside houses and murals, perfect for pictures", at: [35.0975, 129.0106] },
+        { name: "Haeundae Beach", note: "beach day plus fresh seafood", at: [35.1587, 129.1604] }
+      ]},
+      { label: "Day 6", title: "Gyeongju, the old capital", stops: [
+        { name: "Bulguksa Temple", note: "a Silla-era Buddhist temple and UNESCO World Heritage Site", at: [35.79, 129.332] },
+        { name: "Daereungwon Tombs", note: "giant grassy burial mounds of Silla royalty", at: [35.838, 129.212] }
+      ]}
+    ];
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
