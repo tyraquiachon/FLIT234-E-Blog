@@ -3,8 +3,11 @@ const entries = [
   { num: "01", ko: "목적지", en: "Target Country", icon: "🧳", page: "entry1.html", thumb: "images/entry1-seoul.jpg", open: true },
   { num: "02", ko: "여행 준비", en: "Pre-Traveling", icon: "✈️", page: "entry2.html", thumb: "images/entry2-cover.jpg", open: true },
   { num: "03", ko: "문화 이해", en: "Cross-Cultural Understanding", icon: "🌏", page: "entry3.html", thumb: "images/entry3-cover.jpg", open: true },
-  { num: "04", ko: "범죄와 정의", en: "Crime & Amanda Knox", icon: "⚖️", page: "entry4.html", thumb: "images/entry4-cover.jpg", open: true
-   }
+  { num: "04", ko: "범죄와 정의", en: "Crime & Amanda Knox", icon: "⚖️", page: "entry4.html", thumb: "images/entry4-cover.jpg", open: true}
+
+  { num: "05", ko: "언어와 영화", en: "Language & Film", icon: "🎬", page: "entry5.html", thumb: "images/entry5-cover.jpg", open: true },
+  { num: "06", ko: "음식과 식사 예절", en: "Food & Table Manners", icon: "🍜", page: "entry6.html", thumb: "images/entry6-cover.jpg", open: true },
+  { num: "07", ko: "건강", en: "Health", icon: "🩺", page: "entry7.html", thumb: "images/entry7-cover.jpg", open: true }
 ];
 
 // hangul hover headings
@@ -91,12 +94,15 @@ if (stationList) {
   const lockedPct = ((entries.length - openCount) / (entries.length - 1)) * 100;
   document.querySelector(".track-locked").style.setProperty("--locked-pct", lockedPct + "%");
 
+    document.getElementById("metro").style.setProperty("--stations", entries.length);
+
+
   // + train pulls into the latest open station (stations sit at 12.5%, 37.5%, 62.5%, 87.5%)
   const train = document.querySelector(".train");
-  train.style.left = "2%";
+  train.style.left = "1%";
   requestAnimationFrame(() => {
     setTimeout(() => {
-      train.style.left = 12.5 + (openCount - 1) * 25 + "%";
+      train.style.left = ((openCount - 0.5) / entries.length) * 100 + "%";
     }, 300);
   });
 }
