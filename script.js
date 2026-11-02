@@ -3,8 +3,7 @@ const entries = [
   { num: "01", ko: "목적지", en: "Target Country", icon: "🧳", page: "entry1.html", thumb: "images/entry1-seoul.jpg", open: true },
   { num: "02", ko: "여행 준비", en: "Pre-Traveling", icon: "✈️", page: "entry2.html", thumb: "images/entry2-cover.jpg", open: true },
   { num: "03", ko: "문화 이해", en: "Cross-Cultural Understanding", icon: "🌏", page: "entry3.html", thumb: "images/entry3-cover.jpg", open: true },
-  { num: "04", ko: "범죄와 정의", en: "Crime & Amanda Knox", icon: "⚖️", page: "entry4.html", thumb: "images/entry4-cover.jpg", open: true}
-
+  { num: "04", ko: "범죄와 정의", en: "Crime & Amanda Knox", icon: "⚖️", page: "entry4.html", thumb: "images/entry4-cover.jpg", open: true },
   { num: "05", ko: "언어와 영화", en: "Language & Film", icon: "🎬", page: "entry5.html", thumb: "images/entry5-cover.jpg", open: true },
   { num: "06", ko: "음식과 식사 예절", en: "Food & Table Manners", icon: "🍜", page: "entry6.html", thumb: "images/entry6-cover.jpg", open: true },
   { num: "07", ko: "건강", en: "Health", icon: "🩺", page: "entry7.html", thumb: "images/entry7-cover.jpg", open: true }
@@ -94,10 +93,10 @@ if (stationList) {
   const lockedPct = ((entries.length - openCount) / (entries.length - 1)) * 100;
   document.querySelector(".track-locked").style.setProperty("--locked-pct", lockedPct + "%");
 
-    document.getElementById("metro").style.setProperty("--stations", entries.length);
+  // + layout adapts to however many stations are in the list
+  document.getElementById("metro").style.setProperty("--stations", entries.length);
 
-
-  // + train pulls into the latest open station (stations sit at 12.5%, 37.5%, 62.5%, 87.5%)
+  // + train pulls into the latest open station (each station sits in the middle of its column)
   const train = document.querySelector(".train");
   train.style.left = "1%";
   requestAnimationFrame(() => {
@@ -131,17 +130,44 @@ if (chips.length) {
 
 // map of korea
 const mapEl = document.getElementById("map");
-let map = null;
-const pinStyle = { radius: 9, color: "#007a38", weight: 4, fillColor: "#fff", fillOpacity: 1 };
 
 if (mapEl && window.L) {
-  map = L.map("map", { scrollWheelZoom: false }).setView([36.3, 127.8], 7);
+  const map = L.map("map", { scrollWheelZoom: false }).setView([36.3, 127.8], 7);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map);
 
-  if (!window.tripDays) {
+  const pinStyle = { radius: 9, color: "#007a38", weight: 4, fillColor: "#fff", fillOpacity: 1 };
+
+  // + entry pages with an itinerary set window.tripDays before this script loads
+  if (window.tripDays) {
+    const tabs = document.getElementById("dayTabs");
+    const list = document.getElementById("dayStops");
+    const title = document.getElementById("dayTitle");
+    const allStops = tripDays.flatMap((d) => d.stops);
+
+    L.polyline(allStops.map((s) => s.at), { color: "#00a84d", weight: 4, dashArray: "8 8" }).addTo(map);
+    allStops.forEach((s) => L.circleMarker(s.at, pinStyle).addTo(map).bindPopup(`<strong>${s.name}</strong><br>${s.note}`));
+
+    const showDay = (i) => {
+      const day = tripDays[i];
+      tabs.querySelectorAll("button").forEach((b, j) => b.classList.toggle("active", i === j));
+      title.textContent = day.title;
+      list.innerHTML = day.stops.map((s, j) => `
+        <li><span class="n">${j + 1}</span><div><strong>${s.name}</strong><span>${s.note}</span></div></li>`).join("");
+      map.flyToBounds(L.latLngBounds(day.stops.map((s) => s.at)).pad(0.4), { maxZoom: 13, duration: 1 });
+    };
+
+    tripDays.forEach((day, i) => {
+      const btn = document.createElement("button");
+      btn.textContent = day.label;
+      btn.addEventListener("click", () => showDay(i));
+      tabs.appendChild(btn);
+    });
+
+    showDay(0);
+  } else {
     const pins = [
       { name: "Seoul 서울", note: "capital city on the Han River", at: [37.5665, 126.978] },
       { name: "Panmunjom / DMZ 판문점", note: "border with North Korea", at: [37.9559, 126.6773] },
@@ -156,38 +182,6 @@ if (mapEl && window.L) {
         .bindPopup(`<strong>${p.name}</strong><br>${p.note}`);
     });
   }
-}
-
-// itinerary day tabs — entry pages with a trip set window.tripDays before this script loads
-if (window.tripDays) {
-  const tabs = document.getElementById("dayTabs");
-  const list = document.getElementById("dayStops");
-  const title = document.getElementById("dayTitle");
-
-  // + the stop list still works if the map library didn't load
-  if (map) {
-    const allStops = tripDays.flatMap((d) => d.stops);
-    L.polyline(allStops.map((s) => s.at), { color: "#00a84d", weight: 4, dashArray: "8 8" }).addTo(map);
-    allStops.forEach((s) => L.circleMarker(s.at, pinStyle).addTo(map).bindPopup(`<strong>${s.name}</strong><br>${s.note}`));
-  }
-
-  const showDay = (i) => {
-    const day = tripDays[i];
-    tabs.querySelectorAll("button").forEach((b, j) => b.classList.toggle("active", i === j));
-    title.textContent = day.title;
-    list.innerHTML = day.stops.map((s, j) => `
-      <li><span class="n">${j + 1}</span><div><strong>${s.name}</strong><span>${s.note}</span></div></li>`).join("");
-    if (map) map.flyToBounds(L.latLngBounds(day.stops.map((s) => s.at)).pad(0.4), { maxZoom: 13, duration: 1 });
-  };
-
-  tripDays.forEach((day, i) => {
-    const btn = document.createElement("button");
-    btn.textContent = day.label;
-    btn.addEventListener("click", () => showDay(i));
-    tabs.appendChild(btn);
-  });
-
-  showDay(0);
 }
 
 // next-station link on entry pages only works once that entry is open
